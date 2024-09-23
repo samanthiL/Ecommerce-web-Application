@@ -1,0 +1,45 @@
+<p>landing works!</p>
+<div class="container">
+ 
+    @if(showLogin){
+        <div class="login">
+            <h1>Seller Login</h1>
+            <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" class="form-signup">
+              <input
+              type="text"
+              class="form-input"
+              placeholder="Enter Email"
+              name="email"
+              ngModel
+            />
+              <input
+                type="password"
+                class="form-input"
+                placeholder="Enter Password"
+                name="password"
+                ngModel
+              />
+              <button class="form-button">Login</button>
+              <a class="auth-toggle-link" (click)="openSignUp()">Don't have account? Click for sign-up</a>
+        
+            </form>
+          </div>
+
+}
+                   
+@else{
+       <div class="sign-up">
+        <h1>Seller SIgn up</h1>
+       
+        <form #signUpForm="ngForm" (ngSubmit)="signUp(signUpForm.value)" class="form-signup">
+            <input type="text" class="form-input" placeholder="Enter name" name="name" ngModel/>
+            <input type="password" class="form-input" placeholder="Enter password" name="password" ngModel />
+            <input type="text" class="form-input" placeholder="Enter email" name="email" ngModel />
+            <button class="form-button">Sign Up</button>
+            <a class="auth-toggle-link" (click)="openLogin()">Already have account? Click for Login</a>
+        </form>
+    </div>
+ 
+
+}
+</div>

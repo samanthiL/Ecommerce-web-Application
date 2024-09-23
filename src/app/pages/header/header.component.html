@@ -1,0 +1,19 @@
+<!-- <div class="appbar"> -->
+  <div>
+
+  <nav class="nav">
+<h1>E-commere</h1>
+<div class="nav-search">
+<input type="text" placeholder="search products"/>
+<button>search</button>
+</div>
+    <ul class="nav-links">
+    @for(item of MenuItems;track item.id){
+<li (click)="GetSelectedNav(item.id,item.path)"><a>{{item.value}}</a></li>
+    }
+    <!-- <li routerLink="/" routerLinkActive="active">Home</li>
+    <li routerLink="/products">About Us</li> -->
+    
+  </ul>
+</nav>
+</div>
