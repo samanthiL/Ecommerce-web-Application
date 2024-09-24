@@ -1,6 +1,6 @@
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { signUp,login } from '../interface/menu';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SellerServiceService {
   private apiUrl = "http://localhost:3000/seller";
-
+isSellerLoggedIn = new BehaviorSubject<boolean>(false);
   constructor(private http:HttpClient,private router:Router) { 
 
   }
@@ -46,4 +46,12 @@ return this.http.post<any>(this.apiUrl, data, { headers: headers });
        }
       })
      }
+
+     reloadSeller(){
+      if(localStorage.getItem('seller')){
+this.isSellerLoggedIn.next(true)
+this.router.navigate(['products'])
+      }
+     }
+     
 }

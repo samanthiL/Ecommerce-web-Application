@@ -4,16 +4,32 @@
   <nav class="nav">
 <h1>E-commere</h1>
 <div class="nav-search">
-<input type="text" placeholder="search products"/>
-<button>search</button>
+  <input type="text" placeholder="search products"/>
+  <button>search</button>
+
+ 
 </div>
+@if(menuType === 'default'){
     <ul class="nav-links">
     @for(item of MenuItems;track item.id){
 <li (click)="GetSelectedNav(item.id,item.path)"><a>{{item.value}}</a></li>
-    }
+}
     <!-- <li routerLink="/" routerLinkActive="active">Home</li>
     <li routerLink="/products">About Us</li> -->
     
   </ul>
+
+}
+@else if(menuType === 'seller'){
+  <ul class="nav-links">
+    @for(item of SellerItems;track item.id){
+<li (click)="GetSelectedNav(item.id,item.path)"><a>{{item.value}}</a></li>
+    }
+    <!-- <li routerLink="/" routerLinkActive="active">Home</li>
+    <li routerLink="/products">About Us</li> -->
+    <li><a (click)="logout()">Logut</a></li>
+
+  </ul>
+}
 </nav>
 </div>
