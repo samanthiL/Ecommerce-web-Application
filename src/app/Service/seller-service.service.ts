@@ -40,7 +40,7 @@ return this.http.post<any>(this.apiUrl, data, { headers: headers });
         console.log("success");
 
          localStorage.setItem('seller',JSON.stringify(result.body))
-         this.router.navigate(['products'])
+         this.router.navigate(['cart'])
        }else{
          console.log("login failed");
        }
@@ -53,5 +53,5 @@ this.isSellerLoggedIn.next(true)
 this.router.navigate(['products'])
       }
      }
-     
+
 }

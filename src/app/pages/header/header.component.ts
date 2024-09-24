@@ -27,8 +27,8 @@ menuType:string ='default';
 
 
  SellerItems:Menu[] =[
-  {id:1,path:'',value:'Home'},
-  {id:2,path:'/products',value:'Add product'},
+  {id:1,path:'/seller-home',value:'product Home'},
+  {id:2,path:'/seller-products',value:'Add product'},
   {id:3,path:'/login',value:'List'},
   
 
